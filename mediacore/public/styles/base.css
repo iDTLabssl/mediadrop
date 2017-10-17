@@ -78,8 +78,8 @@ a:hover {
 /* MediaCore default layout */
 #mcore-site-title,
 #mcore-logo {
-	width: 920px;
-	margin: 10px auto 0px;
+	/*width: 920px;*/
+	/*margin: 10px auto 0px;*/
 }
 #mcore-tagline {
 	margin-top: -10px;
@@ -158,7 +158,7 @@ a:hover {
 
 /* Sectional Nav */
 .mcore-nav-box {
-	width: 920px;
+	/*width: 100%;*/
 	padding: 14px 15px;
 	height: 38px;
 	margin: 0 auto 15px auto;

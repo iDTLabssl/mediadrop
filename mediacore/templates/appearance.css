@@ -46,8 +46,9 @@ a.mcore-heading:visited {
 a.mcore-nav-link:link,
 a.mcore-nav-link:visited,
 .mcore-nav-link .mcore-navbar-text {
-	color: ${uikit_colors['btn_text_color']};
-	text-shadow: 0 -1px ${uikit_colors['btn_text_shadow_color']};
+	/*color: ${uikit_colors['btn_text_color']};*/
+	color: #ffffff;
+	/*text-shadow: 0 -1px ${uikit_colors['btn_text_shadow_color']};*/
 }
 .mcore-nav-link:hover,
 .mcore-nav-link:active,
@@ -55,18 +56,20 @@ a.mcore-nav-link:visited,
 	color: ${uikit_colors['btn_text_hover_color']};
 }
 .mcore-nav-box {
-	background: url('../images/ui-kit/${navbar_color}/nav-box.png') no-repeat;
+	/*background: url('../images/ui-kit/${navbar_color}/nav-box.png') no-repeat;*/
+	background: #5D2466;
+
 }
 .mcore-nav-link {
-	background: url('../images/ui-kit/${navbar_color}/nav-btn-edge-inner.png') no-repeat -5px 0;
+	/*background: url('../images/ui-kit/${navbar_color}/nav-btn-edge-inner.png') no-repeat -5px 0;*/
 }
 .mcore-playerbar,
 .mcore-nav-link > span {
-	background: url('../images/ui-kit/${navbar_color}/nav-btn-bg.png') repeat-x;
+	/*background: url('../images/ui-kit/${navbar_color}/nav-btn-bg.png') repeat-x;*/
 }
 .mcore-nav-link > em,
 .mcore-nav-link-sep {
-	background: url('../images/ui-kit/${navbar_color}/nav-btn-edge-inner.png') no-repeat 0px 0;
+	/*background: url('../images/ui-kit/${navbar_color}/nav-btn-edge-inner.png') no-repeat 0px 0;*/
 }
 .mcore-nav-search {
 	background: url('../images/ui-kit/${navbar_color}/search-left.png') no-repeat;
@@ -76,7 +79,7 @@ a.mcore-nav-link:visited,
 }
 .mcore-nav-left .mcore-nav-link,
 .mcore-nav-right .mcore-nav-link > em {
-    background-image: url('../images/ui-kit/${navbar_color}/nav-btn-edge-outer.png');
+    /*background-image: url('../images/ui-kit/${navbar_color}/nav-btn-edge-outer.png');*/
 }
 .mcore-playerbar .mcore-nav-left .mcore-nav-link,
 .mcore-playerbar .mcore-nav-right .mcore-nav-link > em {
