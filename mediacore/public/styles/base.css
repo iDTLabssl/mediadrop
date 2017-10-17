@@ -164,7 +164,7 @@ a:hover {
 	margin: 0 auto 15px auto;
 }
 .mcore-nav {
-	width: 730px;
+	/*width: 730px;*/
 	float: left;
 	list-style: none !important;
 }

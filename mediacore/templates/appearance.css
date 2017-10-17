@@ -72,7 +72,8 @@ a.mcore-nav-link:visited,
 	/*background: url('../images/ui-kit/${navbar_color}/nav-btn-edge-inner.png') no-repeat 0px 0;*/
 }
 .mcore-nav-search {
-	background: url('../images/ui-kit/${navbar_color}/search-left.png') no-repeat;
+	/*background: url('../images/ui-kit/${navbar_color}/search-left.png') no-repeat;*/
+	border-radius: 20px;
 }
 .mcore-nav-search-btn {
 	background: url('../images/ui-kit/${navbar_color}/search-right.png') no-repeat;
