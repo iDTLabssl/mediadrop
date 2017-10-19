@@ -85,7 +85,7 @@ See LICENSE.txt in the main project directory, for more information.
 		<ul py:if="not c.nav_hide_main" class="mcore-nav">
 			<li class="mcore-nav-left"><a class="${'nav-explore-on' in body_class and 'active' or None} mcore-nav-link" href="${h.url_for(controller='/media', action='explore')}"><span>Culture<strong>Radio</strong></span><em /></a></li>
 			<li><a class="${'nav-media-on' in body_class and 'active' or None} mcore-nav-link" href="${h.url_for(controller='/media')}"><span>Explore Library</span><em /></a></li>
-			<li><a py:if="settings['appearance_enable_podcast_tab']" class="${'nav-podcasts-on' in body_class and 'active' or None} mcore-nav-link" href="${h.url_for(controller='/podcasts')}"><span>Podcasts</span><em /></a></li>
+			<li><a py:if="settings['appearance_enable_podcast_tab']" class="${'nav-podcasts-on' in body_class and 'active' or None} mcore-nav-link" href="${h.url_for(controller='/podcasts')}"><span>Audio</span><em /></a></li>
 			<li class="mcore-nav-right"><a class="${'nav-categories-on' in body_class and 'active' or None} mcore-nav-link" href="${h.url_for(controller='/categories/news')}"><span>News</span><em /></a></li>
       <li class="mcore-nav-right"><a class="${'nav-categories-on' in body_class and 'active' or None} mcore-nav-link" href="${h.url_for(controller='/categories/technology')}"><span>Technology</span><em /></a></li>
       <li class="mcore-nav-right"><a class="${'nav-categories-on' in body_class and 'active' or None} mcore-nav-link" href="${h.url_for(controller='/categories/music')}"><span>Music</span><em /></a></li>

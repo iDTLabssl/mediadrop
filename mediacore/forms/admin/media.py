@@ -152,6 +152,7 @@ class MediaForm(ListForm):
         CategoryCheckBoxList('categories', label_text=N_('Categories'), options=lambda: DBSession.query(Category.id, Category.name).all()),
         TextArea('tags', label_text=N_('Tags'), attrs=dict(rows=3, cols=15), help_text=N_(u'e.g.: puppies, great dane, adorable')),
         XHTMLTextArea('description', label_text=N_('Description'), attrs=dict(rows=5, cols=25)),
+        TextField('location', label_text=N_('Location'), validator=TextField.validator(not_empty=True), maxlength=255),
         TextArea('notes',
             label_text=N_('Administrative Notes'),
             attrs=dict(rows=3, cols=25),
