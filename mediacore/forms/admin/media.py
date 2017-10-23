@@ -19,6 +19,7 @@ from mediacore.lib.i18n import N_, _, get_available_locales
 from mediacore.forms import FileField, Form, ListForm, SubmitButton, TextArea, TextField, XHTMLTextArea, email_validator
 from mediacore.forms.admin.categories import CategoryCheckBoxList
 from mediacore.model import Category, DBSession, Podcast
+from mediacore.forms.admin.settings import languages
 from mediacore.plugin import events
 from mediacore.validation import URIValidator
 
