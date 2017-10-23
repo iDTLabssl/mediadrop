@@ -150,9 +150,11 @@ class MediaForm(ListForm):
         TextField('author_name', label_text=N_('Author Name'), maxlength=50),
         TextField('author_email', label_text=N_('Author Email'), validator=email_validator(not_empty=True), maxlength=255),
         CategoryCheckBoxList('categories', label_text=N_('Categories'), options=lambda: DBSession.query(Category.id, Category.name).all()),
-        TextArea('tags', label_text=N_('Tags'), attrs=dict(rows=3, cols=15), help_text=N_(u'e.g.: puppies, great dane, adorable')),
+        TextArea('tags', label_text=N_('Tags'), attrs=dict(rows=3, cols=15), help_text=N_(u'e.g.: land, sports, economy')),
         SingleSelectField('location', label_text=N_('Location'), css_classes=['dropdown-select'], options=lambda: [("Sierra Leone", "Liberia")]),
-        TextField('language', label_text=N_('Language'), validator=TextField.validator(not_empty=True), maxlength=255),
+        SingleSelectField('primary_language',
+                label_text=N_('Default Language'), # TODO v0.9.1: Change to 'Primary Language'
+                options=languages,
         XHTMLTextArea('description', label_text=N_('Description'), attrs=dict(rows=5, cols=25)),
         TextArea('notes',
             label_text=N_('Administrative Notes'),
