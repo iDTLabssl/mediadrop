@@ -155,6 +155,7 @@ class MediaForm(ListForm):
         SingleSelectField('primary_language',
                 label_text=N_('Default Language'), # TODO v0.9.1: Change to 'Primary Language'
                 options=languages,
+            ),
         XHTMLTextArea('description', label_text=N_('Description'), attrs=dict(rows=5, cols=25)),
         TextArea('notes',
             label_text=N_('Administrative Notes'),
