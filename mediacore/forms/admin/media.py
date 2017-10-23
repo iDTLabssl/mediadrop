@@ -15,7 +15,7 @@ from tw.forms.validators import Int, DateTimeConverter, FieldStorageUploadConver
 
 from mediacore.lib import helpers
 from mediacore.lib.filetypes import registered_media_types
-from mediacore.lib.i18n import N_, _
+from mediacore.lib.i18n import N_, _, get_available_locales
 from mediacore.forms import FileField, Form, ListForm, SubmitButton, TextArea, TextField, XHTMLTextArea, email_validator
 from mediacore.forms.admin.categories import CategoryCheckBoxList
 from mediacore.model import Category, DBSession, Podcast
@@ -153,7 +153,8 @@ class MediaForm(ListForm):
         TextArea('tags', label_text=N_('Tags'), attrs=dict(rows=3, cols=15), help_text=N_(u'e.g.: land, sports, economy')),
         SingleSelectField('location', label_text=N_('Location'), css_classes=['dropdown-select'], options=lambda: [("Sierra Leone", "Liberia")]),
         SingleSelectField('primary_language',
-                label_text=N_('Default Language'), # TODO v0.9.1: Change to 'Primary Language'
+                label_text=N_('Language'), # TODO v0.9.1: Change to 'Primary Language'
+                css_classes=['dropdown-select'],
                 options=languages,
             ),
         XHTMLTextArea('description', label_text=N_('Description'), attrs=dict(rows=5, cols=25)),
