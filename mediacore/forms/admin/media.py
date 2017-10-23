@@ -152,11 +152,7 @@ class MediaForm(ListForm):
         CategoryCheckBoxList('categories', label_text=N_('Categories'), options=lambda: DBSession.query(Category.id, Category.name).all()),
         TextArea('tags', label_text=N_('Tags'), attrs=dict(rows=3, cols=15), help_text=N_(u'e.g.: land, sports, economy')),
         SingleSelectField('location', label_text=N_('Location'), css_classes=['dropdown-select'], options=lambda: [('sierra-leone', 'Siera Leone'), ('liberia', 'Liberia')]),
-        # SingleSelectField('language',
-        #         label_text=N_('Language'), # TODO v0.9.1: Change to 'Primary Language'
-        #         css_classes=['dropdown-select'],
-        #         options=languages,
-        #     ),
+        SingleSelectField('language', label_text=N_('Language'), css_classes=['dropdown-select'], options=languages),
         XHTMLTextArea('description', label_text=N_('Description'), attrs=dict(rows=5, cols=25)),
         TextArea('notes',
             label_text=N_('Administrative Notes'),
