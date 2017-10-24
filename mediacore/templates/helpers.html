@@ -73,11 +73,12 @@ See LICENSE.txt in the main project directory, for more information.
 		<div id="library-controls" class="clearfix">
 			<span id="library-show">Showing:</span>
 			<ul>
-				<li><a py:strip="show == 'breaking'" href="${h.url_for(show='breaking', q=search_query, **kwargs)}" class="underline-hover">Breaking News</a></li>
-				<li><a py:strip="show == 'tags'" href="${h.url_for(show='tags', q=search_query, **kwargs)}" class="underline-hover">#tags</a></li>
 				<li><a py:strip="show == 'latest'" href="${h.url_for(show='latest', q=search_query, **kwargs)}" class="underline-hover">Latest News</a></li>
-				<li><a py:strip="show == 'popular'" href="${h.url_for(show='popular', q=search_query, **kwargs)}" class="underline-hover">Most Popular</a></li>
 				<li><a py:strip="show == 'featured'" href="${h.url_for(show='featured', q=search_query, **kwargs)}" class="underline-hover">Featured News</a></li>
+				<li><a py:strip="show == 'podcast'" href="${h.url_for(show='podcast', q=search_query, **kwargs)}" class="underline-hover">Audio Contents</a></li>
+				<li><a py:strip="show == 'video'" href="${h.url_for(show='video', q=search_query, **kwargs)}" class="underline-hover">Video Contents</a></li>
+				<li><a py:strip="show == 'popular'" href="${h.url_for(show='popular', q=search_query, **kwargs)}" class="underline-hover">Most Popular</a></li>
+				<li><a py:strip="show == 'tags'" href="${h.url_for(show='tags', q=search_query, **kwargs)}" class="underline-hover">#tags</a></li>
 			</ul>
 			<div class="f-rgt">Page ${paginator.page} of ${paginator.page_count}</div>
 		</div>
