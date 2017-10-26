@@ -170,9 +170,11 @@ class MediaController(BaseController):
                 title = media.title,
                 author_name = media.author.name,
                 author_email = media.author.email,
-                description = media.description,
                 tags = ', '.join((tag.name for tag in media.tags)),
                 categories = [category.id for category in media.categories],
+                location = media.location,
+                language = media.language,
+                description = media.description,
                 notes = media.notes,
             )
 
@@ -227,11 +229,13 @@ class MediaController(BaseController):
             media.slug = get_available_slug(Media, slug, media)
         media.title = title
         media.author = Author(author_name, author_email)
-        media.description = description
-        media.notes = notes
         media.podcast_id = podcast
         media.set_tags(tags)
         media.set_categories(categories)
+        media.language = language
+        media.location = location
+        media.description = description
+        media.notes = notes
 
         media.update_status()
         DBSession.add(media)
@@ -460,6 +464,8 @@ class MediaController(BaseController):
             orig.podcast = input.podcast
             orig.title = input.title
             orig.subtitle = input.subtitle
+            orig.location = input.location
+            orig.language = input.language
             orig.slug = input.slug
             orig.author = input.author
             orig.description = input.description
