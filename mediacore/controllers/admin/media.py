@@ -203,7 +203,7 @@ class MediaController(BaseController):
     @autocommit
     @observable(events.Admin.MediaController.save)
     def save(self, id, slug, title, author_name, author_email,
-             description, notes, podcast, tags, categories,
+             description, notes, podcast, tags, categories, location, language,
              delete=None, **kwargs):
         """Save changes or create a new :class:`~mediacore.model.media.Media` instance.
 
