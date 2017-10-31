@@ -144,12 +144,12 @@ a.mcore-btn.mcore-btn-grey:visited {
 	background: #000000;
 }
 
-.feat-top { background-image: url('../images/ui-kit/${navbar_color}/feature-top.png') }
-.feat-bottom { background-image: url('../images/ui-kit/${navbar_color}/feature-bottom.png') }
-.feat-content { background-image: url('../images/ui-kit/${navbar_color}/feature-bg.png') }
-.m-grid-column .feat-top { background-image: url('../images/ui-kit/${navbar_color}/column-feature-top.png') }
-.m-grid-column .feat-bottom { background-image: url('../images/ui-kit/${navbar_color}/column-feature-bottom.png') }
-.m-grid-column .feat-content { background-image: url('../images/ui-kit/${navbar_color}/column-feature-bg.png') }
+.m-grid-column .feat-content {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 15px;
+    border-radius: 5px;
+    background: #ffffff;
+}
 /*.meta-hover-top { background-image: url('../images/ui-kit/${navbar_color}/meta-hover-top.png') }
 .meta-hover-bottom { background-image: url('../images/ui-kit/${navbar_color}/meta-hover-bottom.png') }
 .meta-hover-content { background-image: url('../images/ui-kit/${navbar_color}/meta-hover-bg.png') }*/
