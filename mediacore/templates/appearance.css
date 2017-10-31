@@ -141,7 +141,7 @@ a.mcore-btn.mcore-btn-grey:visited {
 }
 
 #mcore-foot {
-	background-image: url('../images/ui-kit/${navbar_color}/footer-bg.png');
+	background: #000000;
 }
 
 .feat-top { background-image: url('../images/ui-kit/${navbar_color}/feature-top.png') }
