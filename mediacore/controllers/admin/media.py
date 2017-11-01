@@ -172,8 +172,8 @@ class MediaController(BaseController):
                 author_email = media.author.email,
                 tags = ', '.join((tag.name for tag in media.tags)),
                 categories = [category.id for category in media.categories],
-                location = media.location,
-                language = media.language,
+                # location = media.location,
+                # language = media.language,
                 description = media.description,
                 notes = media.notes,
             )
@@ -232,8 +232,8 @@ class MediaController(BaseController):
         media.podcast_id = podcast
         media.set_tags(tags)
         media.set_categories(categories)
-        media.language = language
-        media.location = location
+        # media.language = language
+        # media.location = location
         media.description = description
         media.notes = notes
 
@@ -464,8 +464,8 @@ class MediaController(BaseController):
             orig.podcast = input.podcast
             orig.title = input.title
             orig.subtitle = input.subtitle
-            orig.location = input.location
-            orig.language = input.language
+            # orig.location = input.location
+            # orig.language = input.language
             orig.slug = input.slug
             orig.author = input.author
             orig.description = input.description
