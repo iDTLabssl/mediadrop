@@ -6,8 +6,7 @@ The source code contained in this file is licensed under the GPLv3 or
 (at your option) any later version.
 See LICENSE.txt in the main project directory, for more information.
 -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:py="http://genshi.edgewall.org/"
       xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -161,6 +160,27 @@ See LICENSE.txt in the main project directory, for more information.
 				<h1 id="media-title">${media.title or _('Add New Media')}</h1>
 			</div>
 			<form py:replace="media_form(media_values, action=media_action, child_args={'categories': {'category_tree': category_tree}})" />
+
+			<button onclick="getLocation()">Get Your Coordinates</button>
+
+			<p id="location"></p>
+
+			<script type="text/javascript">
+				var x = document.getElementById("location");
+
+				function getLocation() {
+					if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(showPosition);
+					} else {
+						x.innerHTML = "Geolocation is not supported by this browser.";
+					}
+				}
+
+				function showPosition(position) {
+					x.innerHTML = "Latitude: " + position.coords.latitude +
+					"<br>Longitude: " + position.coords.longitude;
+				}
+			</script>
 		</div>
 
 	</div>
