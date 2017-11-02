@@ -161,28 +161,26 @@ See LICENSE.txt in the main project directory, for more information.
 			</div>
 			<form py:replace="media_form(media_values, action=media_action, child_args={'categories': {'category_tree': category_tree}})" />
 		</div>
-		<div>
-			<button onclick="getLocation()">Get Your Coordinates</button>
+		<button onclick="getLocation()">Get Your Coordinates</button>
 
-			<p id="location"></p>
+		<p id="location"></p>
 
-			<script type="text/javascript">
-				var x = document.getElementById("location");
+		<script>
+			var x = document.getElementById("location");
 
-				function getLocation() {
-					if (navigator.geolocation) {
-						navigator.geolocation.getCurrentPosition(showPosition);
-					} else {
-						x.innerHTML = "Geolocation is not supported by this browser.";
-					}
+			function getLocation() {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else {
+					x.innerHTML = "Geolocation is not supported by this browser.";
 				}
+			}
 
-				function showPosition(position) {
-					x.innerHTML = "Latitude: " + position.coords.latitude +
-					"<br>Longitude: " + position.coords.longitude;
-				}
-			</script>
-		</div>
+			function showPosition(position) {
+				x.innerHTML = "Latitude: " + position.coords.latitude +
+				"<br>Longitude: " + position.coords.longitude;
+			}
+		</script>
 
 	</div>
 	<div class="column33">
