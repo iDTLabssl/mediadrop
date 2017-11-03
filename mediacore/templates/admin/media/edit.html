@@ -50,6 +50,20 @@ See LICENSE.txt in the main project directory, for more information.
 				window.location = loc.substr(0, loc.lastIndexOf('new')) + id;
 			}
 		}
+		/* get location data */
+		var x = document.getElementById("location");
+
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else {
+				x.innerHTML = "Geolocation is not supported by this browser.";
+			}
+		}
+		function showPosition(position) {
+			x.innerHTML = "Latitude: " + position.coords.latitude +
+			"<br>Longitude: " + position.coords.longitude;
+		}
 		/* Create the width x height mask */
 		Meio.Mask.createMasks('Regexp', {
 			'widthxheight': {
@@ -164,23 +178,6 @@ See LICENSE.txt in the main project directory, for more information.
 		<button onclick="getLocation()">Get Your Coordinates</button>
 
 		<p id="location"></p>
-
-		<script>
-			var x = document.getElementById("location");
-
-			function getLocation() {
-				if (navigator.geolocation) {
-					navigator.geolocation.getCurrentPosition(showPosition);
-				} else {
-					x.innerHTML = "Geolocation is not supported by this browser.";
-				}
-			}
-
-			function showPosition(position) {
-				x.innerHTML = "Latitude: " + position.coords.latitude +
-				"<br>Longitude: " + position.coords.longitude;
-			}
-		</script>
 
 	</div>
 	<div class="column33">

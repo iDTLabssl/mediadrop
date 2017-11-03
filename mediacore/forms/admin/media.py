@@ -154,6 +154,7 @@ class MediaForm(ListForm):
         TextArea('tags', label_text=N_('Tags'), attrs=dict(rows=3, cols=15), help_text=N_(u'e.g.: land, sports, economy')),
         SingleSelectField('location', label_text=N_('Location'), options=lambda: [('sierra-leone', 'Siera Leone'), ('liberia', 'Liberia')]),
         SingleSelectField('language', label_text=N_('Language'), options=languages),
+        SubmitButton('coordinates', default=N_('Get Your Coordinates'), named_button=True),
         XHTMLTextArea('description', label_text=N_('Description'), attrs=dict(rows=5, cols=25)),
         TextArea('notes',
             label_text=N_('Administrative Notes'),

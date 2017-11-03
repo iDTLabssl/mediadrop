@@ -95,6 +95,11 @@ class CategoriesController(BaseController):
             order = order,
         )
 
+    @expose('/map.html')
+    @observable(events.MapsController.mapping)
+    def mapping(self, slug=None, **kwargs):
+        pass
+
     @validate(validators={'limit': LimitFeedItemsValidator()})
     @beaker_cache(expire=60 * 3, query_args=True)
     @expose('sitemaps/mrss.xml')
