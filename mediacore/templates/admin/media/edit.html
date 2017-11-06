@@ -189,24 +189,23 @@ See LICENSE.txt in the main project directory, for more information.
 		<div id="coordinates-box" class="box">
 			<div class="box-head"><h1>Location</h1></div>
 			<div class="box-content">
-				<p id="locate"></p>
-				<div class="btn block" onclick="getLocation"><span>Get Your Co-ordinates</span></div>
+				<p id="findme"></p>
+				<div class="btn block" onclick="getLocation()"><span>Get Your Co-ordinates</span></div>
 				<script type="text/javascript">
-					var x = document.getElementById("locate");
+				var x = document.getElementById("findme");
 
-					function getLocation() {
-						if (navigator.geolocation) {
-							navigator.geolocation.watchPosition(showPosition);
-						} else {
-							x.innerHTML = "Geolocation is not supported by this browser.";}
+				function getLocation() {
+					if (navigator.geolocation) {
+						navigator.geolocation.watchPosition(showPosition);
+					} else {
+						x.innerHTML = "Geolocation is not supported by this browser.";}
 					}
 
-					function showPosition(position) {
-						x.innerHTML = "Latitude: " + position.coords.latitude +
-						"Longitude: " + position.coords.longitude;
-					}
+				function showPosition(position) {
+					x.innerHTML="Latitude: " + position.coords.latitude +
+					"Longitude: " + position.coords.longitude;
+				}
 				</script>
-			</div>
 		</div>
 
 		<div class="box">
