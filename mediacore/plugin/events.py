@@ -250,9 +250,6 @@ class CategoriesController(object):
     # variables.
     feed = Event(['limit', '**kwargs'])
 
-class MapsController(object):
-    mapping = Event(['**kwargs'])
-
 class ErrorController(object):
     document = Event(['**kwargs'])
     report = Event(['**kwargs'])
