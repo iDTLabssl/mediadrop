@@ -90,6 +90,10 @@ class SubmitButton(forms.SubmitButton):
     validator = forms.validators.UnicodeString(if_missing=None, if_empty=None)
     template = 'forms/button.html'
 
+class MapButton(forms.Button):
+    validator = forms.validators.UnicodeString(if_missing=None, if_empty=None)
+    template = 'forms/button.html'
+
 class ResetButton(forms.ResetButton):
     # see SubmitButton for background on if_missing/if_empty
     validator = forms.validators.UnicodeString(if_missing=None, if_empty=None)
