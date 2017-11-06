@@ -188,7 +188,24 @@ See LICENSE.txt in the main project directory, for more information.
 
 		<div id="coordinates-box" class="box">
 			<div class="box-head"><h1>Location</h1></div>
-			<div class="box-content"><div class="btn block"><span>Add Co-ordinates</span></div></div>
+			<p id="locate"></p>
+			<div class="box-content"><div class="btn block" onclick="getLocation()"><span>Add Your Co-ordinates</span></div></div>
+
+			<script>
+				var x = document.getElementById("locate");
+
+				function getLocation() {
+					if (navigator.geolocation) {
+						navigator.geolocation.watchPosition(showPosition);
+					} else {
+						x.innerHTML = "Geolocation is not supported by this browser.";}
+				}
+
+				function showPosition(position) {
+					x.innerHTML="Latitude: " + position.coords.latitude +
+					"Longitude: " + position.coords.longitude;
+				}
+			</script>
 		</div>
 
 		<div class="box">
