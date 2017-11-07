@@ -16,7 +16,7 @@ from pylons import request, tmpl_context
 from sqlalchemy import orm
 
 from mediacore.forms.admin import SearchForm, ThumbForm
-from mediacore.forms.admin.media import AddFileForm, EditFileForm, MediaForm, UpdateStatusForm
+from mediacore.forms.admin.media import AddFileForm, EditFileForm, MediaForm, LocationForm, UpdateStatusForm
 from mediacore.lib import helpers
 from mediacore.lib.auth import has_permission
 from mediacore.lib.base import BaseController
@@ -36,6 +36,7 @@ log = logging.getLogger(__name__)
 
 media_form = MediaForm()
 add_file_form = AddFileForm()
+add_coordinates_form = LocationForm()
 edit_file_form = EditFileForm()
 thumb_form = ThumbForm()
 update_status_form = UpdateStatusForm()
