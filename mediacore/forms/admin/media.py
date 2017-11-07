@@ -113,6 +113,10 @@ class AddFileForm(ListForm):
         TextField('url', validator=URIValidator, suppress_label=True, attrs=lambda: {'title': _('YouTube, Vimeo, Amazon S3 or any other link')}, maxlength=255),
     ]
 
+file_type_options = lambda: registered_media_types()
+file_types = lambda: (id for id, name in registered_media_types())
+file_type_validator = OneOfGenerator(file_types, if_missing=None)
+
 class LocationForm(ListForm):
     template = 'admin/media/location-form.html'
     id = 'location-form'
@@ -126,10 +130,6 @@ class LocationForm(ListForm):
         TextField('location', validator=TextField.validator, suppress_label=True, attrs=lambda: {'title': _('Can\'t find your location in the list')}, maxlength=255),
         SubmitButton('add_location', default=N_('Add Location'), named_button=True, css_class='btn grey btn-add-url f-rgt'),
     ]
-
-file_type_options = lambda: registered_media_types()
-file_types = lambda: (id for id, name in registered_media_types())
-file_type_validator = OneOfGenerator(file_types, if_missing=None)
 
 class EditFileForm(ListForm):
     template = 'admin/media/file-edit-form.html'
