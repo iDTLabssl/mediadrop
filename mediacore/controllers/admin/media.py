@@ -36,7 +36,7 @@ log = logging.getLogger(__name__)
 
 media_form = MediaForm()
 add_file_form = AddFileForm()
-add_coordinates_form = LocationForm()
+location_form = LocationForm()
 edit_file_form = EditFileForm()
 thumb_form = ThumbForm()
 update_status_form = UpdateStatusForm()
@@ -190,6 +190,7 @@ class MediaController(BaseController):
             media_values = media_values,
             category_tree = Category.query.order_by(Category.name).populated_tree(),
             file_add_form = add_file_form,
+            location_form = location_form,
             file_add_action = url_for(action='add_file'),
             file_edit_form = edit_file_form,
             file_edit_action = url_for(action='edit_file'),
@@ -343,6 +344,14 @@ class MediaController(BaseController):
         )
 
         return data
+
+
+    @expose('json', request_method='POST')
+    @validate(location_form, error_handler=json_error)
+    @autocommit
+    @observable(events.Admin.MediaController.location)
+    def location(self, id, file=None, url=None, **kwargs):
+        pass
 
 
     @expose('json', request_method='POST')

@@ -157,6 +157,7 @@ class Admin(object):
         edit = Event(['**kwargs'])
         save = Event(['**kwargs'])
         add_file = Event(['**kwargs'])
+        location = Event(['**kwargs'])
         edit_file = Event(['**kwargs'])
         merge_stubs = Event(['**kwargs'])
         save_thumb = Event(['**kwargs'])
