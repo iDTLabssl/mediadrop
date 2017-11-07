@@ -113,6 +113,20 @@ class AddFileForm(ListForm):
         TextField('url', validator=URIValidator, suppress_label=True, attrs=lambda: {'title': _('YouTube, Vimeo, Amazon S3 or any other link')}, maxlength=255),
     ]
 
+class LocationForm(ListForm):
+    template = 'admin/media/location-form.html'
+    id = 'location-form'
+    submit_text = None
+
+    event = events.Admin.LocationForm
+
+    fields = [
+        SubmitButton('coord', default=N_('Get Your Co-ordinates'), named_button=True, css_class='btn grey btn-add-url f-rgt'),
+        SingleSelectField('locselect', label_text=N_('Select Your Location'), options=lambda: [('sierra-leone', 'Siera Leone'), ('liberia', 'Liberia')]),
+        TextField('location', validator=TextField.validator, suppress_label=True, attrs=lambda: {'title': _('Can\'t find your location in the list')}, maxlength=255),
+        SubmitButton('add_location', default=N_('Add Location'), named_button=True, css_class='btn grey btn-add-url f-rgt'),
+    ]
+
 file_type_options = lambda: registered_media_types()
 file_types = lambda: (id for id, name in registered_media_types())
 file_type_validator = OneOfGenerator(file_types, if_missing=None)
@@ -152,7 +166,6 @@ class MediaForm(ListForm):
         TextField('author_email', label_text=N_('Author Email'), validator=email_validator(not_empty=True), maxlength=255),
         CategoryCheckBoxList('categories', label_text=N_('Categories'), options=lambda: DBSession.query(Category.id, Category.name).all()),
         TextArea('tags', label_text=N_('Tags'), attrs=dict(rows=3, cols=15), help_text=N_(u'e.g.: land, sports, economy')),
-        SingleSelectField('location', label_text=N_('Location'), options=lambda: [('sierra-leone', 'Siera Leone'), ('liberia', 'Liberia')]),
         SingleSelectField('language', label_text=N_('Language'), options=languages),
         XHTMLTextArea('description', label_text=N_('Description'), attrs=dict(rows=5, cols=25)),
         TextArea('notes',
